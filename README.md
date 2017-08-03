@@ -10,7 +10,9 @@ Clone this repository with
 Start a Selenium grid server locally
     $ java -jar selenium-server-standalone-3.4.0.jar -role hub -host 192.168.33.1
 
-Bring up the vagrant box with
+Bring up the Vagrant box with
     $ vagrant up --provision
 
-Your Selenium node will start automagically and register to your Selenium hub
+Connect to the Vagrant box and start a Selenium node
+    $ vagrant ssh
+    $ sh /vagrant_data/selenium-start.sh
