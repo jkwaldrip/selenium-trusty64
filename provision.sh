@@ -40,5 +40,4 @@ echo "Starting Chrome"
 google-chrome --remote-debugging-port=9222 &
 
 echo "Starting Selenium"
-cd /usr/local/bin
-java -jar selenium-server-standalone-3.4.0.jar &
+java -jar /usr/local/bin/selenium-server-standalone-3.4.0.jar &
