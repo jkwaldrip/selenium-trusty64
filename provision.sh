@@ -24,12 +24,10 @@ java -version
 echo "Downloading Selenium"
 cd /tmp
 wget "https://selenium-release.storage.googleapis.com/3.4/selenium-server-standalone-3.4.0.jar"
-mv selenium-server-standalone-3.4.0.jar /usr/local/bin
 
 echo "Downloading Chromedriver"
 wget "https://chromedriver.storage.googleapis.com/2.31/chromedriver_linux64.zip"
 unzip chromedriver_linux64.zip
-mv chromedriver /usr/local/bin
 
 echo "Starting Xvfb"
 export DISPLAY=:10
@@ -40,4 +38,4 @@ echo "Starting Chrome"
 google-chrome --remote-debugging-port=9222 &
 
 echo "Starting Selenium"
-java -jar /usr/local/bin/selenium-server-standalone-3.4.0.jar &
+java -Dwebdriver.chrome.driver=chromedriver -jar selenium-server-standalone-3.4.0.jar -role node -hub http://192.168.33.1:4444/grid/register/ &
